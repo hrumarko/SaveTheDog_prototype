@@ -8,6 +8,7 @@ public class Line : MonoBehaviour
     int i = 0;
     public LineCollission lc;
     public static Action restart;
+    public static Action start;
     bool isCanDraw = true;
     
     [SerializeField] LineRenderer _lineRenderer;
@@ -38,7 +39,7 @@ public class Line : MonoBehaviour
                     _lineRenderer.SetPosition(_lineRenderer.positionCount-1,posV3);
                 }
             }
-            if(_lineRenderer.positionCount>=150){
+            if(_lineRenderer.positionCount>=210){
                 isCanDraw = false;
             }
             }
@@ -48,6 +49,7 @@ public class Line : MonoBehaviour
             lc.SetEdgeCollider();
             rb.isKinematic = false;
             isCanDraw = true;
+            start();
         }
     }
     
